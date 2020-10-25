@@ -8,12 +8,10 @@ class FeaturedProduct(CMSPlugin):
 
 
 def get_slotname(instance):
-    return
+    import pdb; pdb.set_trace()  # <---------
 
 
 
-#===============================================================================
-# class MyModel(models.Model):
-#     # your fields
-#     my_placeholder = fields.PlaceholderField('placeholder_name')
-#===============================================================================
+class MyModel(models.Model):
+    # your fields
+    my_placeholder = fields.PlaceholderField('placeholder_name')
