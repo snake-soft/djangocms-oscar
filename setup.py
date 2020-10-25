@@ -14,6 +14,7 @@ setup(name='djangocms-oscar',
       license='BSD',
       platforms=['linux'],
       packages=find_packages(),
+      package_data={'templates': ['*']},
       include_package_data=True,
       install_requires=[
           'django-cms>=3.0.2',
