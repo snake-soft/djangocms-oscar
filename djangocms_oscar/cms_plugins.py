@@ -2,11 +2,11 @@ from cms.plugin_base import CMSPluginBase
 from cms.plugin_pool import plugin_pool
 from django.utils.translation import ugettext_lazy as _
 
-from . import models
+from .models import FeaturedProduct
 
 
 class FeaturedProductPlugin(CMSPluginBase):
-    model = models.FeaturedProduct
+    model = FeaturedProduct
     name = _("Featured product")
     admin_preview = True
     render_template = 'djangocms_oscar/plugins/product.html'
@@ -14,8 +14,6 @@ class FeaturedProductPlugin(CMSPluginBase):
     def render(self, context, instance, placeholder):
         context.update({'instance': instance})
         return context
-
-plugin_pool.register_plugin(FeaturedProductPlugin)
 
 
 class SearchFormPlugin(CMSPluginBase):
@@ -27,4 +25,6 @@ class SearchFormPlugin(CMSPluginBase):
         context.update({'instance': instance})
         return context
 
+
+plugin_pool.register_plugin(FeaturedProductPlugin)
 plugin_pool.register_plugin(SearchFormPlugin)
