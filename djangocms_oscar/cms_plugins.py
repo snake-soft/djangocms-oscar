@@ -16,3 +16,15 @@ class FeaturedProductPlugin(CMSPluginBase):
         return context
 
 plugin_pool.register_plugin(FeaturedProductPlugin)
+
+
+class SearchFormPlugin(CMSPluginBase):
+    name = _("Search Form")
+    admin_preview = True
+    render_template = 'djangocms_oscar/plugins/search_form.html'
+
+    def render(self, context, instance, placeholder):
+        context.update({'instance': instance})
+        return context
+
+plugin_pool.register_plugin(SearchFormPlugin)
